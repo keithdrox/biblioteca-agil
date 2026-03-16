@@ -22,7 +22,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -pl ${{ matrix.service }} clean package -DskipTests
+      run: mvn -f ${{ matrix.service }}/pom.xml clean package -DskipTests
 
     - name: Build Docker image
       run: |
